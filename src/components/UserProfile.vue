@@ -6,18 +6,15 @@
         </div>
         <div class="card-body">
           <div v-if="user" class="text-center">
-            <!-- عرض صورة المستخدم -->
             <div class="mb-4">
               <img :src="imageUrl" alt="User Image" v-if="imageUrl" class="img-thumbnail rounded-circle" style="width: 150px; height: 150px;" />
             </div>
   
-            <!-- عرض بيانات المستخدم -->
             <div class="mb-4">
               <p class="mb-2"><strong>Name:</strong> {{ user.name }}</p>
               <p class="mb-2"><strong>Email:</strong> {{ user.email }}</p>
             </div>
   
-            <!-- أزرار التحديث والحذف -->
             <div class="d-flex justify-content-center gap-3">
               <router-link :to="`/users/${$route.params.id}/edit`" class="btn btn-primary">
                 <i class="fas fa-edit"></i> Update User

@@ -56,14 +56,12 @@
         }
   
         try {
-          // تحديث بيانات المستخدم
           await axios.post(`http://localhost:8000/api/users/${this.$route.params.id}`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
           });
   
-          // إذا تم تحديث الصورة، قم بتحميلها
           if (this.image) {
             const imageFormData = new FormData();
             imageFormData.append('image', this.image);
